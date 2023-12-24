@@ -19,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2rem;
   align-items: center;
 }
 .component {
@@ -26,6 +27,7 @@ body {
   height: max-content;
   background-color: var(--white);
   padding: 1rem;
+  margin: 2rem;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -34,6 +36,7 @@ body {
   gap: 1rem;
 }
 .component-info {
+  width: 250px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -55,4 +58,5 @@ body {
 .component-title-description {
   font-weight: 400;
   color: var(--grayish-blue);
+  font-size: 0.9rem;
 }
