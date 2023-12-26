@@ -1,4 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+/* CSS reset by Josh Comeau */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
 
 :root {
   --white: hsl(0, 0%, 100%);
@@ -6,25 +68,21 @@
   --grayish-blue: hsl(220, 15%, 55%);
   --dark-blue: hsl(218, 44%, 22%);
 }
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 body {
   font-family: "Outfit", sans-serif;
   background-color: var(--light-grey);
-  width: 100vw;
-  height: 100vh;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
   align-items: center;
 }
+
+/* remove width and height from the component. The browser can decide how much height is needed. And instead if giving an explicit width in px, use max-width in rem. This allows the component to shrink narrower if needed, and let's it adapt responsively even if users change their font size */
 .component {
-  width: 300px;
-  height: max-content;
+  max-width: 20rem;
+  
   background-color: var(--white);
   padding: 1rem;
   margin: 2rem;
@@ -36,7 +94,7 @@ body {
   gap: 1rem;
 }
 .component-info {
-  width: 250px;
+  max-width: 15rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -45,10 +103,10 @@ body {
 }
 .component-image img {
   border-radius: 10px;
-  width: 100%;
+  /* width: 100%;
   max-width: 350px;
   height: auto;
-  object-fit: cover;
+  object-fit: cover; */
 }
 .component-title {
   font-weight: 700;
@@ -59,4 +117,11 @@ body {
   font-weight: 400;
   color: var(--grayish-blue);
   font-size: 0.9rem;
+}
+.attribution {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
