@@ -82,7 +82,7 @@ body {
 /* remove width and height from the component. The browser can decide how much height is needed. And instead if giving an explicit width in px, use max-width in rem. This allows the component to shrink narrower if needed, and let's it adapt responsively even if users change their font size */
 .component {
   max-width: 20rem;
-  
+  box-shadow: 0px 20px 20px 0px #00000017;
   background-color: var(--white);
   padding: 1rem;
   margin: 2rem;
